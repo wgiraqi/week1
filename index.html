@@ -1,0 +1,1199 @@
+<!DOCTYPE html>
+<html lang="ar" dir="rtl" data-theme="dark">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+  <meta name="description" content="اختبار الأسبوع الأول — المرأة في القرآن | مؤسسة وعي للفكر والمعرفة">
+  <meta name="theme-color" content="#0b1f17">
+  <title>اختبار الأسبوع الأول — المرأة في القرآن | مؤسسة وعي</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Amiri:wght@400;700&family=Tajawal:wght@400;500;700;800&display=swap" rel="stylesheet">
+
+  <!-- ===================== الأنماط (style.css) ===================== -->
+  <style>
+    :root {
+      --font-body: "Tajawal", "Segoe UI", Tahoma, system-ui, sans-serif;
+      --font-display: "Amiri", "Traditional Arabic", serif;
+      --radius: 22px;
+      --radius-sm: 14px;
+      --ease: cubic-bezier(.22, .8, .3, 1);
+      --dur: 320ms;
+    }
+
+    [data-theme="dark"] {
+      --bg: #0a1d15;
+      --bg-2: #0f2a1e;
+      --surface: #12301f;
+      --surface-2: #17402a;
+      --border: rgba(214, 183, 107, .22);
+      --text: #f5efe0;
+      --text-soft: #c9d3c8;
+      --green: #1f6b45;
+      --gold: #d6b76b;
+      --gold-strong: #e6c97e;
+      --on-gold: #1a2a1f;
+      --btn-primary-bg: linear-gradient(135deg, #e0c47a, #bf9b4a);
+      --btn-primary-text: #1a2a1f;
+      --shadow: 0 18px 50px rgba(0, 0, 0, .35);
+      --input-bg: rgba(0, 0, 0, .22);
+      --danger: #ff9b8f;
+      --danger-bg: rgba(255, 120, 100, .12);
+      --ok: #7fd9a3;
+      --track: rgba(255, 255, 255, .1);
+    }
+
+    [data-theme="light"] {
+      --bg: #f8f4ea;
+      --bg-2: #efe8d6;
+      --surface: #ffffff;
+      --surface-2: #faf6ea;
+      --border: rgba(15, 61, 42, .14);
+      --text: #1b2b23;
+      --text-soft: #4b5c52;
+      --green: #0f3d2a;
+      --gold: #a8832f;
+      --gold-strong: #8c6b1e;
+      --on-gold: #ffffff;
+      --btn-primary-bg: linear-gradient(135deg, #14533a, #0b3324);
+      --btn-primary-text: #fdf8e9;
+      --shadow: 0 18px 44px rgba(15, 61, 42, .12);
+      --input-bg: #fffdf7;
+      --danger: #a3261a;
+      --danger-bg: #fdecea;
+      --ok: #14733f;
+      --track: rgba(15, 61, 42, .1);
+    }
+
+    *, *::before, *::after { box-sizing: border-box; }
+
+    html { -webkit-text-size-adjust: 100%; scroll-behavior: smooth; }
+
+    body {
+      margin: 0;
+      min-height: 100vh;
+      min-height: 100dvh;
+      font-family: var(--font-body);
+      font-size: 17px;
+      line-height: 1.8;
+      color: var(--text);
+      background:
+        radial-gradient(900px 500px at 85% -10%, rgba(214, 183, 107, .14), transparent 60%),
+        radial-gradient(800px 600px at 0% 110%, rgba(31, 107, 69, .35), transparent 60%),
+        var(--bg);
+      background-attachment: fixed;
+      overflow-x: hidden;
+      transition: background-color var(--dur), color var(--dur);
+    }
+
+    [data-theme="light"] body {
+      background:
+        radial-gradient(900px 500px at 85% -10%, rgba(168, 131, 47, .14), transparent 60%),
+        radial-gradient(800px 600px at 0% 110%, rgba(15, 61, 42, .08), transparent 60%),
+        var(--bg);
+      background-attachment: fixed;
+    }
+
+    /* زخرفة هندسية خفيفة */
+    body::before {
+      content: "";
+      position: fixed;
+      inset: 0;
+      pointer-events: none;
+      opacity: .05;
+      background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='80' height='80' viewBox='0 0 80 80'%3E%3Cpath d='M40 6l8 22 22-8-8 22 22 8-22 8 8 22-22-8-8 22-8-22-22 8 8-22-22-8 22-8-8-22 22 8z' fill='none' stroke='%23d6b76b' stroke-width='1'/%3E%3C/svg%3E");
+      background-size: 80px 80px;
+    }
+
+    [hidden] { display: none !important; }
+
+    .sr-only {
+      position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px;
+      overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0;
+    }
+
+    .skip-link {
+      position: absolute; top: -60px; right: 12px; z-index: 100;
+      background: var(--gold); color: var(--on-gold);
+      padding: 8px 16px; border-radius: 10px; text-decoration: none; font-weight: 700;
+    }
+    .skip-link:focus { top: 12px; }
+
+    /* ---------- الهيكل ---------- */
+    .app {
+      position: relative;
+      z-index: 1;
+      width: 100%;
+      max-width: 820px;
+      margin: 0 auto;
+      padding: calc(16px + env(safe-area-inset-top)) 16px calc(24px + env(safe-area-inset-bottom));
+      min-height: 100vh;
+      min-height: 100dvh;
+      display: flex;
+      flex-direction: column;
+    }
+
+    .topbar {
+      display: flex;
+      align-items: center;
+      justify-content: space-between;
+      gap: 12px;
+      padding: 6px 2px 18px;
+    }
+
+    .brand-mini {
+      display: flex; align-items: center; gap: 10px; min-width: 0;
+    }
+    .brand-mini .brand-logo {
+      width: 54px; height: 54px; flex: 0 0 54px;
+      object-fit: contain; border-radius: 50%;
+      border: 1px solid var(--border); background: var(--surface);
+      padding: 2px; box-shadow: 0 4px 14px rgba(0,0,0,.18);
+    }
+    .brand-mini .mark {
+      display: none;
+      font-family: var(--font-display); font-weight: 700; font-size: 1.6rem;
+      color: var(--gold); line-height: 1; padding-inline-end: 10px;
+      border-inline-end: 1px solid var(--border);
+    }
+    .brand-mini .names { display: flex; flex-direction: column; line-height: 1.35; min-width: 0; }
+    .brand-mini .names strong { font-size: .98rem; }
+    .brand-mini .names span { font-size: .8rem; color: var(--text-soft); }
+
+    .theme-toggle {
+      flex: none;
+      width: 44px; height: 44px;
+      display: grid; place-items: center;
+      border-radius: 50%;
+      border: 1px solid var(--border);
+      background: var(--surface);
+      color: var(--gold);
+      cursor: pointer;
+      transition: transform .2s var(--ease), background .2s;
+    }
+    .theme-toggle:hover { transform: translateY(-2px); background: var(--surface-2); }
+    .theme-toggle:active { transform: scale(.94); }
+    .theme-toggle svg { width: 22px; height: 22px; }
+    [data-theme="dark"] .icon-moon { display: none; }
+    [data-theme="light"] .icon-sun { display: none; }
+
+    main { flex: 1; display: flex; flex-direction: column; justify-content: center; }
+
+    .screen { width: 100%; }
+
+    .card {
+      background: linear-gradient(180deg, var(--surface), var(--surface-2));
+      border: 1px solid var(--border);
+      border-radius: var(--radius);
+      box-shadow: var(--shadow);
+      padding: 28px 22px;
+      position: relative;
+      overflow: hidden;
+    }
+    .card::before {
+      content: "";
+      position: absolute; inset-inline: 0; top: 0; height: 3px;
+      background: linear-gradient(90deg, transparent, var(--gold), transparent);
+      opacity: .8;
+    }
+
+    .focus-target:focus { outline: none; }
+
+    /* ---------- الأزرار ---------- */
+    .btn {
+      font-family: inherit;
+      font-size: 1.05rem;
+      font-weight: 700;
+      min-height: 52px;
+      padding: 12px 26px;
+      border-radius: 999px;
+      border: 1px solid transparent;
+      cursor: pointer;
+      display: inline-flex; align-items: center; justify-content: center; gap: 10px;
+      transition: transform .2s var(--ease), box-shadow .2s, background .2s, opacity .2s, border-color .2s;
+      -webkit-tap-highlight-color: transparent;
+      text-decoration: none;
+    }
+    .btn:focus-visible, .theme-toggle:focus-visible, .dot:focus-visible, .link-btn:focus-visible, textarea:focus-visible {
+      outline: 3px solid var(--gold);
+      outline-offset: 3px;
+    }
+    .btn-primary {
+      background: var(--btn-primary-bg);
+      color: var(--btn-primary-text);
+      box-shadow: 0 10px 24px rgba(0, 0, 0, .25);
+    }
+    .btn-primary:hover:not(:disabled) { transform: translateY(-2px); box-shadow: 0 14px 30px rgba(0, 0, 0, .32); }
+    .btn-primary:active:not(:disabled) { transform: translateY(0) scale(.98); }
+    .btn-ghost {
+      background: transparent;
+      color: var(--text);
+      border-color: var(--border);
+    }
+    .btn-ghost:hover:not(:disabled) { background: var(--surface-2); border-color: var(--gold); transform: translateY(-2px); }
+    .btn-ghost:active:not(:disabled) { transform: scale(.98); }
+    .btn:disabled { opacity: .55; cursor: not-allowed; }
+    .btn svg { width: 20px; height: 20px; flex: none; }
+
+    .link-btn {
+      font-family: inherit; font-size: .95rem; font-weight: 700;
+      background: none; border: 0; color: var(--gold); cursor: pointer;
+      padding: 8px 4px; text-decoration: underline; text-underline-offset: 4px;
+    }
+    .link-btn:hover { color: var(--gold-strong); }
+
+    /* ---------- الصفحة الافتتاحية ---------- */
+    .intro { text-align: center; padding: 38px 22px 34px; }
+    .brand-big .org {
+      font-size: 1rem; color: var(--text-soft); letter-spacing: .02em;
+    }
+    .brand-big .wai {
+      font-family: var(--font-display);
+      font-size: clamp(3.6rem, 16vw, 5.6rem);
+      font-weight: 700;
+      line-height: 1.1;
+      margin: 0;
+      background: linear-gradient(180deg, var(--gold-strong), var(--gold));
+      -webkit-background-clip: text; background-clip: text;
+      color: transparent;
+    }
+    .brand-big .tagline {
+      display: inline-block;
+      margin-top: 4px;
+      padding: 4px 18px;
+      border-top: 1px solid var(--border);
+      border-bottom: 1px solid var(--border);
+      color: var(--gold);
+      font-weight: 500;
+      letter-spacing: .08em;
+    }
+    .ornament {
+      display: flex; align-items: center; justify-content: center; gap: 12px;
+      margin: 24px auto 18px; color: var(--gold); max-width: 280px;
+    }
+    .ornament::before, .ornament::after { content: ""; flex: 1; height: 1px; background: linear-gradient(90deg, transparent, var(--gold)); }
+    .ornament::after { transform: scaleX(-1); }
+    .ornament svg { width: 18px; height: 18px; }
+
+    .quiz-kicker { color: var(--gold); font-weight: 700; margin: 0; font-size: 1.05rem; }
+    .quiz-topic {
+      font-family: var(--font-display);
+      font-size: clamp(2rem, 8vw, 3rem);
+      margin: 2px 0 12px;
+      line-height: 1.4;
+    }
+    .intro-desc { max-width: 560px; margin: 0 auto 22px; color: var(--text-soft); }
+
+    .chips { display: flex; flex-wrap: wrap; justify-content: center; gap: 10px; margin-bottom: 24px; }
+    .chip {
+      padding: 6px 16px; border-radius: 999px; font-size: .92rem; font-weight: 500;
+      border: 1px solid var(--border); background: var(--input-bg); color: var(--text);
+    }
+    .chip b { color: var(--gold); }
+
+    .instructions {
+      text-align: start;
+      max-width: 520px;
+      margin: 0 auto 28px;
+      padding: 16px 20px;
+      border-radius: var(--radius-sm);
+      background: var(--input-bg);
+      border: 1px dashed var(--border);
+    }
+    .instructions h2 { font-size: 1.05rem; margin: 0 0 6px; color: var(--gold); }
+    .instructions ul { margin: 0; padding-inline-start: 22px; color: var(--text-soft); font-size: .98rem; }
+    .instructions li { margin: 4px 0; }
+    .instructions li::marker { color: var(--gold); }
+
+    .btn-start { min-width: 230px; font-size: 1.15rem; min-height: 58px; }
+
+    /* ---------- شاشة السؤال ---------- */
+    .progress-head {
+      display: flex; justify-content: space-between; align-items: baseline;
+      gap: 12px; margin-bottom: 10px; font-weight: 700;
+    }
+    .progress-head .count { color: var(--gold); font-size: 1.05rem; }
+    .progress-head .count small { color: var(--text-soft); font-weight: 500; font-size: .9rem; }
+    .progress-head .pct { color: var(--text-soft); font-size: .9rem; font-weight: 500; }
+
+    .progress-track {
+      height: 10px; border-radius: 999px; background: var(--track); overflow: hidden;
+    }
+    .progress-bar {
+      height: 100%; width: 0; border-radius: inherit;
+      background: linear-gradient(270deg, var(--gold-strong), var(--gold), #8f7330);
+      transition: width .6s var(--ease);
+    }
+
+    .dots { display: flex; justify-content: center; gap: 12px; margin: 18px 0 6px; }
+    .dot {
+      width: 40px; height: 40px; border-radius: 50%;
+      border: 1px solid var(--border); background: var(--input-bg); color: var(--text-soft);
+      font-family: inherit; font-weight: 700; font-size: .95rem; cursor: pointer;
+      display: grid; place-items: center; position: relative;
+      transition: transform .2s var(--ease), background .2s, color .2s, border-color .2s;
+    }
+    .dot:hover:not(:disabled) { transform: translateY(-2px); border-color: var(--gold); }
+    .dot:disabled { opacity: .45; cursor: not-allowed; }
+    .dot.done { border-color: var(--gold); color: var(--gold); }
+    .dot.done::after {
+      content: ""; position: absolute; bottom: -3px; inset-inline-end: -3px;
+      width: 12px; height: 12px; border-radius: 50%; background: var(--gold);
+      border: 2px solid var(--surface);
+    }
+    .dot.current {
+      background: var(--gold); color: var(--on-gold); border-color: var(--gold);
+      transform: scale(1.12); box-shadow: 0 6px 16px rgba(214, 183, 107, .35);
+    }
+
+    .question-card { margin-top: 18px; }
+    .q-body { transition: opacity var(--dur) var(--ease), transform var(--dur) var(--ease); }
+    .q-body.leaving { opacity: 0; transform: translateX(-18px); }
+    .q-body.entering { animation: slideIn var(--dur) var(--ease) both; }
+
+    @keyframes slideIn {
+      from { opacity: 0; transform: translateX(22px); }
+      to { opacity: 1; transform: none; }
+    }
+
+    .q-label {
+      display: inline-block; padding: 2px 14px; border-radius: 999px;
+      background: rgba(214, 183, 107, .14); color: var(--gold); font-weight: 700; font-size: .92rem;
+      margin-bottom: 10px;
+    }
+    .q-text {
+      font-family: var(--font-display);
+      font-size: clamp(1.6rem, 6vw, 2.3rem);
+      line-height: 1.6;
+      margin: 0 0 20px;
+      font-weight: 700;
+    }
+
+    .field { position: relative; }
+    textarea {
+      width: 100%;
+      min-height: 190px;
+      resize: vertical;
+      font-family: inherit;
+      font-size: 1.05rem; /* 16px+ يمنع التكبير التلقائي على iOS */
+      line-height: 1.9;
+      color: var(--text);
+      background: var(--input-bg);
+      border: 1.5px solid var(--border);
+      border-radius: var(--radius-sm);
+      padding: 14px 16px;
+      transition: border-color .2s, box-shadow .2s;
+    }
+    textarea::placeholder { color: var(--text-soft); opacity: .7; }
+    textarea:focus { outline: none; border-color: var(--gold); box-shadow: 0 0 0 4px rgba(214, 183, 107, .18); }
+    textarea.invalid { border-color: var(--danger); box-shadow: 0 0 0 4px var(--danger-bg); }
+    textarea.shake { animation: shake .4s; }
+
+    @keyframes shake {
+      0%, 100% { transform: translateX(0); }
+      25% { transform: translateX(-6px); }
+      75% { transform: translateX(6px); }
+    }
+
+    .field-meta {
+      display: flex; justify-content: space-between; gap: 10px; margin-top: 8px; min-height: 28px;
+      font-size: .9rem;
+    }
+    .char-count { color: var(--text-soft); margin-inline-start: auto; font-variant-numeric: tabular-nums; }
+
+    .alert {
+      display: flex; align-items: flex-start; gap: 8px;
+      color: var(--danger); background: var(--danger-bg);
+      border-radius: 12px; padding: 8px 14px; font-weight: 500; font-size: .95rem;
+      line-height: 1.6;
+    }
+    .alert.fade { animation: fadeUp .3s var(--ease) both; }
+
+    .nav {
+      display: flex; gap: 12px; margin-top: 22px;
+      flex-wrap: wrap; justify-content: space-between;
+    }
+    .nav .spacer { flex: 1; }
+    .nav-extra { text-align: center; margin-top: 10px; }
+
+    /* ---------- المراجعة ---------- */
+    .section-title {
+      font-family: var(--font-display);
+      font-size: clamp(1.9rem, 7vw, 2.6rem);
+      margin: 0 0 4px; color: var(--gold); text-align: center; line-height: 1.4;
+    }
+    .section-sub { text-align: center; color: var(--text-soft); margin: 0 0 22px; }
+
+    .review-list { list-style: none; margin: 0; padding: 0; display: grid; gap: 14px; }
+    .review-item {
+      background: var(--input-bg); border: 1px solid var(--border);
+      border-radius: var(--radius-sm); padding: 16px 16px 14px;
+      animation: fadeUp .45s var(--ease) both;
+    }
+    .review-item header { display: flex; justify-content: space-between; align-items: center; gap: 10px; margin-bottom: 4px; }
+    .review-item .num { color: var(--gold); font-weight: 700; font-size: .92rem; }
+    .review-item h3 { margin: 0 0 8px; font-size: 1.15rem; line-height: 1.7; }
+    .review-answer {
+      margin: 0; padding: 10px 14px; border-radius: 10px;
+      background: rgba(214, 183, 107, .08);
+      border-inline-start: 3px solid var(--gold);
+      white-space: pre-wrap; overflow-wrap: anywhere; color: var(--text);
+    }
+
+    .submit-status { margin-top: 18px; text-align: center; min-height: 28px; }
+    .status-loading { display: inline-flex; align-items: center; gap: 10px; color: var(--gold); font-weight: 700; }
+    .status-error { text-align: start; }
+    .note { font-size: .88rem; color: var(--text-soft); text-align: center; margin: 14px 0 0; }
+
+    .spinner {
+      width: 20px; height: 20px; border-radius: 50%;
+      border: 3px solid rgba(214, 183, 107, .3); border-top-color: var(--gold);
+      animation: spin .8s linear infinite; flex: none;
+    }
+    .btn-primary .spinner { border-color: rgba(0, 0, 0, .2); border-top-color: currentColor; }
+    @keyframes spin { to { transform: rotate(360deg); } }
+
+    /* ---------- النجاح ---------- */
+    .success { text-align: center; padding: 40px 22px 34px; }
+    .check-wrap {
+      width: 96px; height: 96px; margin: 0 auto 18px; border-radius: 50%;
+      display: grid; place-items: center;
+      background: rgba(127, 217, 163, .12); border: 2px solid var(--ok);
+      animation: pop .6s var(--ease) both;
+    }
+    .check-wrap svg { width: 50px; height: 50px; color: var(--ok); }
+    .check-wrap path {
+      stroke-dasharray: 40; stroke-dashoffset: 40;
+      animation: draw .6s .3s var(--ease) forwards;
+    }
+    @keyframes pop { from { transform: scale(.6); opacity: 0; } to { transform: none; opacity: 1; } }
+    @keyframes draw { to { stroke-dashoffset: 0; } }
+    .success h2 { font-family: var(--font-display); font-size: clamp(1.7rem, 7vw, 2.4rem); margin: 0 0 12px; color: var(--gold); line-height: 1.5; }
+    .success p { margin: 0 auto 10px; max-width: 520px; color: var(--text-soft); }
+    .success .signature { margin: 22px 0 26px; }
+    .success .signature strong { display: block; font-family: var(--font-display); font-size: 1.8rem; color: var(--text); }
+    .success .signature span { color: var(--gold); letter-spacing: .08em; }
+    .success .caveat {
+      font-size: .9rem; padding: 10px 14px; border-radius: 12px;
+      background: var(--input-bg); border: 1px dashed var(--border);
+    }
+
+    .footer { text-align: center; font-size: .85rem; color: var(--text-soft); padding-top: 18px; }
+
+    /* ---------- حركة الظهور ---------- */
+    .reveal { animation: fadeUp .7s var(--ease) both; animation-delay: calc(var(--i, 0) * 90ms); }
+    @keyframes fadeUp { from { opacity: 0; transform: translateY(16px); } to { opacity: 1; transform: none; } }
+
+    /* ---------- التجاوب ---------- */
+    @media (max-width: 560px) {
+      body { font-size: 16.5px; }
+      .card { padding: 22px 16px; border-radius: 18px; }
+      .intro, .success { padding: 30px 16px 26px; }
+      .nav { flex-direction: column-reverse; }
+      .nav .btn { width: 100%; }
+      .nav .spacer { display: none; }
+      .btn-start { width: 100%; }
+      .dots { gap: 8px; }
+      .dot { width: 38px; height: 38px; }
+      textarea { min-height: 170px; }
+      .brand-mini .names span { display: none; }
+    }
+
+    @media (min-width: 900px) {
+      .app { padding-top: 28px; }
+      .card { padding: 38px 40px; }
+      .intro { padding: 52px 48px 44px; }
+    }
+
+    /* ---------- تقليل الحركة ---------- */
+    @media (prefers-reduced-motion: reduce) {
+      *, *::before, *::after {
+        animation-duration: .01ms !important;
+        animation-delay: 0ms !important;
+        animation-iteration-count: 1 !important;
+        transition-duration: .01ms !important;
+        scroll-behavior: auto !important;
+      }
+      .spinner { animation-duration: 1.6s !important; animation-iteration-count: infinite !important; }
+      .check-wrap path { stroke-dashoffset: 0; }
+    }
+
+    noscript .card { margin: 20px; text-align: center; }
+  </style>
+</head>
+<body>
+  <a class="skip-link" href="#main">تخطي إلى المحتوى</a>
+
+  <div class="app">
+    <header class="topbar">
+      <div class="brand-mini">
+        <img class="brand-logo" src="logo.png" alt="شعار مؤسسة وعي" onerror="this.hidden=true; this.nextElementSibling.style.display='inline-block'">
+        <span class="mark" aria-hidden="true">وعي</span>
+        <div class="names">
+          <strong>مؤسسة وعي</strong>
+          <span>للفكر والمعرفة</span>
+        </div>
+      </div>
+      <button type="button" id="themeToggle" class="theme-toggle" aria-label="تبديل الوضع الفاتح والداكن">
+        <svg class="icon-sun" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" aria-hidden="true"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.9 4.9l1.4 1.4M17.7 17.7l1.4 1.4M2 12h2M20 12h2M4.9 19.1l1.4-1.4M17.7 6.3l1.4-1.4"/></svg>
+        <svg class="icon-moon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M21 12.8A9 9 0 1 1 11.2 3a7 7 0 0 0 9.8 9.8z"/></svg>
+      </button>
+    </header>
+
+    <main id="main" tabindex="-1">
+
+      <noscript>
+        <div class="card">يحتاج هذا الاختبار إلى تفعيل JavaScript ليعمل.</div>
+      </noscript>
+
+      <!-- ===== الشاشة الافتتاحية ===== -->
+      <section id="screen-intro" class="screen" aria-labelledby="introTitle">
+        <div class="card intro">
+          <div class="brand-big reveal" style="--i:0">
+            <div class="org">مؤسسة</div>
+            <p class="wai" aria-hidden="true">وعي</p>
+            <span class="tagline">للفكر والمعرفة</span>
+          </div>
+
+          <div class="ornament reveal" style="--i:1" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="currentColor"><path d="M12 1l2.6 7.4L22 11l-7.4 2.6L12 21l-2.6-7.4L2 11l7.4-2.6z"/></svg>
+          </div>
+
+          <h1 id="introTitle" class="focus-target" tabindex="-1" style="margin:0">
+            <span class="quiz-kicker reveal" style="--i:2; display:block">اختبار الأسبوع الأول</span>
+            <span class="quiz-topic reveal" style="--i:3; display:block">المرأة في القرآن</span>
+          </h1>
+
+          <p class="intro-desc reveal" style="--i:4">
+            رحلة قصيرة مع آيات الذكر الحكيم، نتأمّل فيها مكانة المرأة ونماذجها المضيئة وأثرها في بناء الإنسان والمجتمع. شاركينا وشاركنا بأفكارك، فكل إجابة تُثري الحوار وتزيد الوعي.
+          </p>
+
+          <div class="chips reveal" style="--i:5">
+            <span class="chip"><b id="introCount">5</b> أسئلة</span>
+            <span class="chip">سؤال واحد في كل صفحة</span>
+            <span class="chip">إجابات كتابية</span>
+          </div>
+
+          <div class="instructions reveal" style="--i:6">
+            <h2>تعليمات الاختبار</h2>
+            <ul>
+              <li>يتكوّن الاختبار من خمسة أسئلة.</li>
+              <li>يظهر كل سؤال في صفحة مستقلة.</li>
+              <li>اكتب إجابتك بأسلوبك، ولا يمكن الانتقال قبل كتابة إجابة.</li>
+              <li>يمكنك الرجوع وتعديل أي إجابة قبل الإرسال.</li>
+              <li>ستظهر لك شاشة مراجعة قبل الإرسال النهائي.</li>
+            </ul>
+          </div>
+
+          <button type="button" id="startBtn" class="btn btn-primary btn-start reveal" style="--i:7">ابدأ الاختبار</button>
+        </div>
+      </section>
+
+      <!-- ===== شاشة السؤال ===== -->
+      <section id="screen-quiz" class="screen" aria-labelledby="qText" hidden>
+        <div class="progress-head">
+          <span class="count" id="qCounter" aria-live="polite"></span>
+          <span class="pct" id="qPct"></span>
+        </div>
+        <div class="progress-track" role="progressbar" id="progressTrack" aria-valuemin="0" aria-valuemax="100" aria-valuenow="0" aria-label="نسبة التقدم في الاختبار">
+          <div class="progress-bar" id="progressBar"></div>
+        </div>
+        <div class="dots" id="dots" role="group" aria-label="التنقل بين الأسئلة"></div>
+
+        <div class="card question-card">
+          <div class="q-body" id="qBody">
+            <span class="q-label" id="qLabel"></span>
+            <h2 class="q-text focus-target" id="qText" tabindex="-1"></h2>
+
+            <div class="field">
+              <label for="answerInput" class="sr-only">إجابتك</label>
+              <textarea id="answerInput" rows="7" maxlength="2000" placeholder="اكتب إجابتك هنا…" aria-describedby="qError qCharCount" autocomplete="off"></textarea>
+              <div class="field-meta">
+                <div id="qError" class="alert fade" role="alert" hidden></div>
+                <span class="char-count" id="qCharCount" aria-live="off"></span>
+              </div>
+            </div>
+          </div>
+
+          <div class="nav">
+            <button type="button" id="prevBtn" class="btn btn-ghost">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M9 6l6 6-6 6"/></svg>
+              <span>السؤال السابق</span>
+            </button>
+            <span class="spacer"></span>
+            <button type="button" id="nextBtn" class="btn btn-primary">
+              <span id="nextLabel">السؤال التالي</span>
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M15 6l-6 6 6 6"/></svg>
+            </button>
+          </div>
+          <div class="nav-extra" id="backToReviewWrap" hidden>
+            <button type="button" id="backToReviewBtn" class="link-btn">العودة إلى شاشة المراجعة</button>
+          </div>
+        </div>
+      </section>
+
+      <!-- ===== شاشة المراجعة ===== -->
+      <section id="screen-review" class="screen" aria-labelledby="reviewTitle" hidden>
+        <div class="card">
+          <h2 id="reviewTitle" class="section-title focus-target" tabindex="-1">مراجعة الإجابات</h2>
+          <p class="section-sub">راجع إجاباتك جيدًا. يمكنك تعديل أي إجابة قبل التأكيد النهائي.</p>
+
+          <ol class="review-list" id="reviewList"></ol>
+
+          <div class="submit-status" id="submitStatus" aria-live="polite"></div>
+
+          <div class="nav">
+            <button type="button" id="editBtn" class="btn btn-ghost">العودة إلى التعديل</button>
+            <span class="spacer"></span>
+            <button type="button" id="confirmBtn" class="btn btn-primary">
+              <span id="confirmLabel">تأكيد الإرسال</span>
+            </button>
+          </div>
+          <p class="note">لن تُرسَل إجاباتك إلا بعد ضغطك على «تأكيد الإرسال».</p>
+        </div>
+      </section>
+
+      <!-- ===== شاشة النجاح ===== -->
+      <section id="screen-success" class="screen" aria-labelledby="successTitle" hidden>
+        <div class="card success">
+          <div class="check-wrap" aria-hidden="true">
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.6" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12.5l4.5 4.5L19 7.5"/></svg>
+          </div>
+          <h2 id="successTitle" class="focus-target" tabindex="-1">شكرًا لمشاركتك في اختبار الأسبوع الأول</h2>
+          <p>نشكر لك وقتك وتأمّلك، ونسأل الله أن يزيدنا وإياك علمًا ووعيًا.</p>
+          <p class="caveat">تم إرسال إجاباتك من جهازك. وبسبب طبيعة قناة الإرسال المستخدمة لا يستطيع الموقع التحقق تقنيًا من وصولها إلى الجهة المستقبِلة.</p>
+          <div class="signature">
+            <strong>مؤسسة وعي</strong>
+            <span>للفكر والمعرفة</span>
+          </div>
+          <button type="button" id="homeBtn" class="btn btn-primary">العودة إلى الصفحة الرئيسية</button>
+        </div>
+      </section>
+
+    </main>
+
+    <footer class="footer">© مؤسسة وعي — للفكر والمعرفة</footer>
+  </div>
+
+  <!-- ===================== المنطق (script.js) ===================== -->
+  <script>
+    (function () {
+      "use strict";
+
+      /* ---------- الإعدادات ---------- */
+      const BACKEND_URL = "https://script.google.com/macros/s/AKfycbwV0P6yNLiQfLlvh07zQ4QW0fWbua6-S0S2a6EQkW1I0ea2lC1H_mEDGmhNDuQ1xhFE4A/exec";
+
+      const SURVEY_NAME = "اختبار الأسبوع الأول — المرأة في القرآن";
+      const SURVEY_ID = "wai-week-1-women-quran";
+      const MAX_ANSWER_LENGTH = 2000;
+      const DRAFT_KEY = "wai-week-1-women-quran:draft";
+
+      /* ---------- بيانات الأسئلة (مستقلة عن نظام الإرسال) ---------- */
+      const questions = [
+        { id: 1, text: "ما معيار التفاضل بين الناس في القرآن؟" },
+        { id: 2, text: "اذكري نموذجين لنساء ذكرهن القرآن مع أهم صفاتهن." },
+        { id: 3, text: "ما الدرس المستفاد من قصة امرأة فرعون؟" },
+        { id: 4, text: "كيف تساهم المرأة في بناء المجتمع؟" },
+        { id: 5, text: "لماذا تعد الأسرة المدرسة الأولى للإنسان؟" }
+      ];
+
+      /* ---------- الحالة ---------- */
+      const state = {
+        current: 0,
+        answers: {},          // المفتاح: id السؤال
+        busy: false,          // انتقال جارٍ
+        submitting: false,    // إرسال جارٍ
+        fromReview: false     // المستخدم عاد للتعديل من شاشة المراجعة
+      };
+
+      /* ---------- عناصر الصفحة ---------- */
+      const $ = (id) => document.getElementById(id);
+      const screens = {
+        intro: $("screen-intro"),
+        quiz: $("screen-quiz"),
+        review: $("screen-review"),
+        success: $("screen-success")
+      };
+      const el = {
+        introCount: $("introCount"),
+        startBtn: $("startBtn"),
+        counter: $("qCounter"),
+        pct: $("qPct"),
+        track: $("progressTrack"),
+        bar: $("progressBar"),
+        dots: $("dots"),
+        body: $("qBody"),
+        label: $("qLabel"),
+        text: $("qText"),
+        input: $("answerInput"),
+        error: $("qError"),
+        charCount: $("qCharCount"),
+        prev: $("prevBtn"),
+        next: $("nextBtn"),
+        nextLabel: $("nextLabel"),
+        backWrap: $("backToReviewWrap"),
+        backBtn: $("backToReviewBtn"),
+        reviewList: $("reviewList"),
+        submitStatus: $("submitStatus"),
+        editBtn: $("editBtn"),
+        confirmBtn: $("confirmBtn"),
+        confirmLabel: $("confirmLabel"),
+        homeBtn: $("homeBtn"),
+        themeToggle: $("themeToggle")
+      };
+
+      const reducedMotionQuery = window.matchMedia("(prefers-reduced-motion: reduce)");
+      const prefersReducedMotion = () => reducedMotionQuery.matches;
+      const TRANSITION_MS = 280;
+
+      /* ---------- أدوات مساعدة ---------- */
+      const nf = new Intl.NumberFormat("ar-EG");
+      const toArabic = (n) => nf.format(n);
+
+      const ordinals = ["الأول", "الثاني", "الثالث", "الرابع", "الخامس", "السادس", "السابع", "الثامن", "التاسع", "العاشر"];
+      function questionLabel(index) {
+        return "السؤال " + (ordinals[index] || toArabic(index + 1));
+      }
+
+      function getAnswer(q) {
+        const v = state.answers[q.id];
+        return typeof v === "string" ? v : "";
+      }
+      function isAnswered(q) {
+        return getAnswer(q).trim().length > 0;
+      }
+      function firstUnansweredIndex() {
+        return questions.findIndex((q) => !isAnswered(q));
+      }
+      function allAnswered() {
+        return firstUnansweredIndex() === -1;
+      }
+
+      /* ---------- حفظ المسودة داخل الجلسة فقط (على الجهاز) ---------- */
+      function saveDraft() {
+        try { sessionStorage.setItem(DRAFT_KEY, JSON.stringify(state.answers)); } catch (e) { /* التخزين غير متاح */ }
+      }
+      function loadDraft() {
+        try {
+          const raw = sessionStorage.getItem(DRAFT_KEY);
+          if (!raw) return;
+          const data = JSON.parse(raw);
+          if (data && typeof data === "object") {
+            questions.forEach((q) => {
+              if (typeof data[q.id] === "string") state.answers[q.id] = data[q.id].slice(0, MAX_ANSWER_LENGTH);
+            });
+          }
+        } catch (e) { /* مسودة تالفة: تجاهلها */ }
+      }
+      function clearDraft() {
+        try { sessionStorage.removeItem(DRAFT_KEY); } catch (e) { /* لا شيء */ }
+      }
+
+      /* ---------- التنقل بين الشاشات ---------- */
+      function showScreen(name) {
+        Object.keys(screens).forEach((key) => { screens[key].hidden = key !== name; });
+        window.scrollTo({ top: 0, behavior: prefersReducedMotion() ? "auto" : "smooth" });
+        const target = screens[name].querySelector(".focus-target");
+        if (target && name !== "quiz") {
+          target.focus({ preventScroll: true });
+        }
+      }
+
+      /* ---------- رسائل التنبيه ---------- */
+      function showError(message) {
+        el.error.textContent = message;
+        el.error.hidden = false;
+        el.error.classList.remove("fade");
+        void el.error.offsetWidth;
+        el.error.classList.add("fade");
+        el.input.classList.add("invalid");
+        el.input.setAttribute("aria-invalid", "true");
+      }
+      function clearError() {
+        el.error.hidden = true;
+        el.error.textContent = "";
+        el.input.classList.remove("invalid", "shake");
+        el.input.removeAttribute("aria-invalid");
+      }
+
+      /* ---------- عرض السؤال ---------- */
+      function updateCharCount() {
+        el.charCount.textContent = toArabic(el.input.value.length) + " / " + toArabic(MAX_ANSWER_LENGTH);
+      }
+
+      function buildDots() {
+        el.dots.textContent = "";
+        questions.forEach((q, i) => {
+          const b = document.createElement("button");
+          b.type = "button";
+          b.className = "dot";
+          b.textContent = toArabic(i + 1);
+          b.dataset.index = String(i);
+          b.addEventListener("click", () => jumpTo(i));
+          el.dots.appendChild(b);
+        });
+      }
+
+      function updateDots() {
+        const limit = firstUnansweredIndex() === -1 ? questions.length - 1 : firstUnansweredIndex();
+        Array.prototype.forEach.call(el.dots.children, (b, i) => {
+          const q = questions[i];
+          const isCurrent = i === state.current;
+          b.classList.toggle("current", isCurrent);
+          b.classList.toggle("done", !isCurrent && isAnswered(q));
+          b.disabled = i > limit && i !== state.current;
+          b.setAttribute("aria-label", questionLabel(i) + (isAnswered(q) ? " — تمت الإجابة" : ""));
+          if (isCurrent) b.setAttribute("aria-current", "step"); else b.removeAttribute("aria-current");
+        });
+      }
+
+      function renderQuestion() {
+        const total = questions.length;
+        const q = questions[state.current];
+        const percent = Math.round(((state.current + 1) / total) * 100);
+
+        el.counter.innerHTML = "";
+        el.counter.appendChild(document.createTextNode(questionLabel(state.current) + " "));
+        const small = document.createElement("small");
+        small.textContent = "(" + toArabic(state.current + 1) + " من " + toArabic(total) + ")";
+        el.counter.appendChild(small);
+
+        el.pct.textContent = toArabic(percent) + "٪ من الاختبار";
+        el.bar.style.width = percent + "%";
+        el.track.setAttribute("aria-valuenow", String(percent));
+
+        el.label.textContent = questionLabel(state.current);
+        el.text.textContent = q.text;
+        el.input.value = getAnswer(q);
+        updateCharCount();
+        clearError();
+
+        const isLast = state.current === total - 1;
+        el.prev.disabled = state.current === 0;
+        el.next.disabled = false;
+        el.backBtn.disabled = false;
+        el.nextLabel.textContent = isLast ? "إنهاء الاختبار وإرسال الإجابات" : "السؤال التالي";
+        el.backWrap.hidden = !(state.fromReview && allAnswered());
+        updateDots();
+      }
+
+      function setNavDisabled(disabled) {
+        el.next.disabled = disabled;
+        el.backBtn.disabled = disabled;
+        Array.prototype.forEach.call(el.dots.children, (b) => { if (disabled) b.disabled = true; });
+        if (disabled) {
+          el.prev.disabled = true;
+        }
+      }
+
+      /* انتقال سلس مع قفل ضد النقر المتكرر */
+      function transition(action, focusInput) {
+        if (state.busy) return;
+        state.busy = true;
+        setNavDisabled(true);
+
+        const finish = () => {
+          action();
+          state.busy = false;
+          if (!screens.quiz.hidden) {
+            renderQuestion();
+            if (focusInput) {
+              el.text.focus({ preventScroll: true });
+            }
+          }
+        };
+
+        if (prefersReducedMotion() || screens.quiz.hidden) {
+          finish();
+          return;
+        }
+
+        el.body.classList.remove("entering");
+        el.body.classList.add("leaving");
+        window.setTimeout(() => {
+          action();
+          el.body.classList.remove("leaving");
+          state.busy = false;
+          if (!screens.quiz.hidden) {
+            renderQuestion();
+            el.body.classList.add("entering");
+            el.text.focus({ preventScroll: true });
+          }
+        }, TRANSITION_MS);
+      }
+
+      function jumpTo(index) {
+        if (state.busy || index === state.current) return;
+        if (index > state.current && !isAnswered(questions[state.current])) {
+          flagEmpty();
+          return;
+        }
+        transition(() => { state.current = index; }, true);
+      }
+
+      function flagEmpty() {
+        showError("يرجى كتابة إجابة قبل الانتقال إلى السؤال التالي.");
+        el.input.classList.remove("shake");
+        void el.input.offsetWidth;
+        if (!prefersReducedMotion()) el.input.classList.add("shake");
+        el.input.focus();
+      }
+
+      /* ---------- الأحداث: الاختبار ---------- */
+      function startQuiz() {
+        state.current = 0;
+        state.fromReview = false;
+        showScreen("quiz");
+        el.body.classList.remove("leaving");
+        el.body.classList.add("entering");
+        renderQuestion();
+        window.setTimeout(() => el.text.focus({ preventScroll: true }), 50);
+      }
+
+      function goNext() {
+        if (state.busy) return;
+        const q = questions[state.current];
+        if (!isAnswered(q)) {
+          flagEmpty();
+          return;
+        }
+        if (state.current < questions.length - 1) {
+          transition(() => { state.current += 1; }, true);
+        } else {
+          openReview();
+        }
+      }
+
+      function goPrev() {
+        if (state.busy || state.current === 0) return;
+        transition(() => { state.current -= 1; }, true);
+      }
+
+      function openReview() {
+        const missing = firstUnansweredIndex();
+        if (missing !== -1) {
+          transition(() => { state.current = missing; }, true);
+          window.setTimeout(() => showError("يجب الإجابة عن جميع الأسئلة قبل المراجعة والإرسال."), TRANSITION_MS + 60);
+          return;
+        }
+        renderReview();
+        clearSubmitStatus();
+        showScreen("review");
+      }
+
+      el.input.addEventListener("input", () => {
+        const q = questions[state.current];
+        state.answers[q.id] = el.input.value;
+        saveDraft();
+        updateCharCount();
+        if (el.input.value.trim().length > 0) clearError();
+        updateDots();
+        el.backWrap.hidden = !(state.fromReview && allAnswered());
+      });
+
+      el.startBtn.addEventListener("click", startQuiz);
+      el.next.addEventListener("click", goNext);
+      el.prev.addEventListener("click", goPrev);
+      el.backBtn.addEventListener("click", () => {
+        if (state.busy) return;
+        if (!isAnswered(questions[state.current])) { flagEmpty(); return; }
+        openReview();
+      });
+
+      /* ---------- المراجعة ---------- */
+      function renderReview() {
+        el.reviewList.textContent = "";
+        questions.forEach((q, i) => {
+          const li = document.createElement("li");
+          li.className = "review-item";
+          li.style.animationDelay = (i * 70) + "ms";
+
+          const header = document.createElement("header");
+          const num = document.createElement("span");
+          num.className = "num";
+          num.textContent = questionLabel(i);
+          const edit = document.createElement("button");
+          edit.type = "button";
+          edit.className = "link-btn";
+          edit.textContent = "تعديل";
+          edit.setAttribute("aria-label", "تعديل إجابة " + questionLabel(i));
+          edit.addEventListener("click", () => editQuestion(i));
+          header.appendChild(num);
+          header.appendChild(edit);
+
+          const h3 = document.createElement("h3");
+          h3.textContent = q.text;
+
+          const ans = document.createElement("p");
+          ans.className = "review-answer";
+          ans.textContent = getAnswer(q).trim();
+
+          li.appendChild(header);
+          li.appendChild(h3);
+          li.appendChild(ans);
+          el.reviewList.appendChild(li);
+        });
+      }
+
+      function editQuestion(index) {
+        if (state.submitting) return;
+        state.fromReview = true;
+        state.current = index;
+        showScreen("quiz");
+        el.body.classList.remove("leaving");
+        el.body.classList.add("entering");
+        renderQuestion();
+        window.setTimeout(() => el.input.focus({ preventScroll: true }), 60);
+      }
+
+      el.editBtn.addEventListener("click", () => {
+        if (state.submitting) return;
+        editQuestion(questions.length - 1);
+      });
+
+      /* ---------- حالة الإرسال ---------- */
+      function clearSubmitStatus() {
+        el.submitStatus.textContent = "";
+      }
+
+      function setSubmitting(on) {
+        state.submitting = on;
+        el.confirmBtn.disabled = on;
+        el.editBtn.disabled = on;
+        el.confirmBtn.setAttribute("aria-busy", on ? "true" : "false");
+        Array.prototype.forEach.call(el.reviewList.querySelectorAll("button"), (b) => { b.disabled = on; });
+        el.confirmBtn.textContent = "";
+        if (on) {
+          const sp = document.createElement("span");
+          sp.className = "spinner";
+          sp.setAttribute("aria-hidden", "true");
+          const lb = document.createElement("span");
+          lb.textContent = "جارٍ الإرسال…";
+          el.confirmBtn.appendChild(sp);
+          el.confirmBtn.appendChild(lb);
+        } else {
+          const lb = document.createElement("span");
+          lb.id = "confirmLabel";
+          lb.textContent = "تأكيد الإرسال";
+          el.confirmBtn.appendChild(lb);
+        }
+      }
+
+      function showSubmitLoading() {
+        el.submitStatus.textContent = "";
+        const wrap = document.createElement("div");
+        wrap.className = "status-loading";
+        const sp = document.createElement("span");
+        sp.className = "spinner";
+        sp.setAttribute("aria-hidden", "true");
+        const t = document.createElement("span");
+        t.textContent = "جارٍ إرسال إجاباتك، يرجى عدم إغلاق الصفحة…";
+        wrap.appendChild(sp);
+        wrap.appendChild(t);
+        el.submitStatus.appendChild(wrap);
+      }
+
+      function showSubmitError(message) {
+        el.submitStatus.textContent = "";
+        const box = document.createElement("div");
+        box.className = "alert status-error";
+        box.setAttribute("role", "alert");
+        box.textContent = message;
+        el.submitStatus.appendChild(box);
+      }
+
+      /* ---------- بناء الحمولة ديناميكيًا من مصفوفة الأسئلة ---------- */
+      function buildPayload() {
+        return {
+          surveyName: SURVEY_NAME,
+          surveyId: SURVEY_ID,
+          responses: questions.map((q) => ({
+            question: q.text,
+            answer: getAnswer(q).trim()
+          })),
+          submittedAt: new Date().toISOString()
+        };
+      }
+
+      async function submitAnswers() {
+        if (state.submitting) return;
+
+        if (!allAnswered()) {
+          const i = firstUnansweredIndex();
+          showSubmitError("لا يمكن الإرسال قبل الإجابة عن جميع الأسئلة. السؤال غير المكتمل: " + questionLabel(i) + ".");
+          return;
+        }
+
+        if (navigator.onLine === false) {
+          showSubmitError("لا يوجد اتصال بالإنترنت حاليًا. إجاباتك محفوظة في هذه الصفحة؛ أعد المحاولة عند عودة الاتصال.");
+          return;
+        }
+
+        setSubmitting(true);
+        showSubmitLoading();
+
+        const payload = buildPayload();
+
+        try {
+          await fetch(BACKEND_URL, {
+            method: "POST",
+            mode: "no-cors",
+            headers: {
+              "Content-Type": "text/plain;charset=utf-8"
+            },
+            body: JSON.stringify(payload)
+          });
+        } catch (err) {
+          setSubmitting(false);
+          showSubmitError("تعذّر إرسال الإجابات بسبب مشكلة في الاتصال. إجاباتك ما زالت محفوظة، يمكنك المحاولة مرة أخرى.");
+          return;
+        }
+
+        /* اكتمل الطلب من جهة المتصفح. الاستجابة غير قابلة للقراءة في وضع no-cors،
+           لذلك لا نؤكد وصول الإجابات إلى الجهة المستقبِلة. */
+        state.answers = {};
+        state.fromReview = false;
+        clearDraft();
+        setSubmitting(false);
+        clearSubmitStatus();
+        showScreen("success");
+      }
+
+      el.confirmBtn.addEventListener("click", submitAnswers);
+
+      /* ---------- العودة للرئيسية ---------- */
+      el.homeBtn.addEventListener("click", () => {
+        state.answers = {};
+        state.current = 0;
+        state.fromReview = false;
+        clearDraft();
+        showScreen("intro");
+      });
+
+      /* ---------- الوضع الفاتح/الداكن ---------- */
+      function applyTheme(theme) {
+        document.documentElement.setAttribute("data-theme", theme);
+        const meta = document.querySelector('meta[name="theme-color"]');
+        if (meta) meta.setAttribute("content", theme === "dark" ? "#0b1f17" : "#f8f4ea");
+      }
+      (function initTheme() {
+        let saved = null;
+        try { saved = localStorage.getItem("wai-theme"); } catch (e) { /* غير متاح */ }
+        applyTheme(saved === "light" || saved === "dark" ? saved : "dark");
+      })();
+      el.themeToggle.addEventListener("click", () => {
+        const next = document.documentElement.getAttribute("data-theme") === "dark" ? "light" : "dark";
+        applyTheme(next);
+        try { localStorage.setItem("wai-theme", next); } catch (e) { /* غير متاح */ }
+      });
+
+      /* ---------- التهيئة ---------- */
+      el.introCount.textContent = String(questions.length);
+      loadDraft();
+      buildDots();
+      showScreen("intro");
+      window.scrollTo(0, 0);
+    })();
+  </script>
+</body>
+</html>
